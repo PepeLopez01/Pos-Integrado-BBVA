@@ -1,4 +1,6 @@
 # Manejo de puertos
+
+## TODA ESTA PARTE ESTÁ PENDIENTE SE DEBE REVISAR CON JENNER
 Existen dos métodos que nos van a ayudar a realizar el manejo de puertos.
 
 ## Apertura de puerto
