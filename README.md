@@ -1,12 +1,12 @@
-# PoS Integrado Interprete
+# PoS Integrado
 
-PoS Integrado Interprete, nace como la evolución tecnológica de PoS integrado Legacy (Pax y Verifone), conservando la base del protocolo de comunicación R232 a través de un cable USB.
+PoS Integrado se comunica con la terminal a través de un cable USB conectado directamente a la terminal. Planificada la evolución para conectarse a través de una base y desde esta hasta la terminal a través de bluetooth.
 
 Para ello facilitamos una librería de integración, y mediante las funcionalidades de esta, interactuar con el PoS.
 
 ### Ventajas
 - El sistema de caja se comunica directamente con la terminal, evitando el ingreso manual de datos en la terminal. 
-- La capacidad obtener información de las transacciones realizadas por la terminal.
+- La caja tendrá la capacidad de obtener información de las transacciones realizadas por la terminal.
 - La comunicación entre caja y terminal es punto a punto via USB.
 
 ### Funcionalidades
