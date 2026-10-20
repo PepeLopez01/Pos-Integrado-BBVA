@@ -1,4 +1,7 @@
 # Prueba de comunicación
+
+## REVISAR CON JENNER SI ESTO NO CAMBIA POR EL TEMA DEL KEEP ALIVE PARA VERIFICAR LA CONECCIÓN
+
 Existen dos métodos que se pueden implementar para chequear la comunicación. 
 
 Para verificar que la comunicación entre la terminal y la caja este establecida de manera correcta, se puede utilizar el método **vpiTestConnection** de la librería de integración. 
