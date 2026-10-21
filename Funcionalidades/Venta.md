@@ -1,19 +1,19 @@
 # Venta
 
-La venta es la principal transacción a realizar con la terminal, existen la posibilidad de llevarla a cabo de dos formas:
+La venta es la principal transacción a realizar con la terminal, existe la posibilidad de llevarla a cabo de dos formas:
 
 - Realizar la transacción con cualquier marca de tarjeta.
-- Realizar la transacción con una marca de tarjeta en especifico.
+- Realizar la transacción con una marca de tarjeta en específico.
 
-En ambas formas se utiliza el método **vpiPurchaseMark** de la libreria de integración.
+En ambas formas se utiliza el método **vpiPurchaseMark** de la librería de integración.
 
 ````c 
-Int vpiPurchaseMark(vpiPurchaseIn_t* input, vpiTrxMarkOut1_t* output, LONG timeout)
+int vpiPurchaseMark(vpiPurchaseIn_t* input, vpiTrxMarkOut1_t* output, LONG timeout)
 ````
 
 Este método cuenta con dos estructuras como parámetros:
 
-La información que se envia a la terminal con los datos de la transacción, la estructura de entrada, vpiPurchaseIn_t:  
+La información que se envía a la terminal con los datos de la transacción, la estructura de entrada, vpiPurchaseIn_t:  
 ````c
 typedef struct PURCHASE_IN{
 	LPSTR amount;           // Monto x100  
@@ -28,7 +28,7 @@ typedef struct PURCHASE_IN{
 	char  linemode;         // transaccion Online (1)
 }vpiPurchaseIn_t;  
 ````
-Cumpliendo con las siguientes caracteristicas:
+Cumpliendo con las siguientes características:
 |       Campo       |   Largo Máximo    |
 |:-----------------:|:-----------------:|
 |   amount          |       12          |
@@ -84,12 +84,35 @@ Teniendo como largo máximo para estos valores:
 |   promoMsg        |        200        |
 
 ## Transacción sin restricción de marca de tarjeta 
-Para realizar una transacción con cualquier marca de tarjeta, siempre y cuando sea una marca que este dada de alta en la terminal, se debe indicar en el parámetro **issuerCode** el código **"VVI"** del vpiPurchaseIn_t. 
+Para realizar una transacción con cualquier marca de tarjeta, siempre y cuando sea una marca que esté dada de alta en la terminal, se debe indicar en el parámetro **issuerCode** el código **"VVI"** del vpiPurchaseIn_t. 
 
-## Transacción con una marca de tarjeta en especifico 
-Para realizar una transacción con una marca de tarjeta en especifico, se debe indicar en el parámetro **issuerCode** del vpiPurchaseIn_t el código correspondiente.
+## Transacción con una marca de tarjeta en específico 
+Para realizar una transacción con una marca de tarjeta en específico, se debe indicar en el parámetro **issuerCode** del vpiPurchaseIn_t el código correspondiente.
 
 Para conocer los issuerCode o códigos de tarjetas disponibles para transaccionar en la terminal, se puede realizar la [consulta de tarjetas](./consultaTarjetas.md)
+
+## Funcionamiento de la transacción (Keep Alive)
+
+El comando de venta (PURCHASE) recibe de la terminal una respuesta inmediata **Command_accepted**. El estado definitivo de la transacción no se obtiene en ese momento, sino a través del mecanismo de **Keep Alive** y de la consulta **Query(transactionId)**.
+
+Una vez que la terminal acepta el comando, la Librería inicia automáticamente el bucle de Keep Alive, que se ejecuta cada **500 ms** y es gestionado internamente. La Caja **no necesita invocarlo ni consultar el estado por su cuenta**: se mantiene a la espera del retorno del método **vpiPurchaseMark**, que se produce cuando la transacción finaliza (o cuando se cumple el **timeout** indicado).
+
+En cada ciclo, el Keep Alive devuelve dos valores independientes:
+
+- **transactionStatus**: estado de la transacción (`PENDING`, `CONFIRMING`, `SUCCESS`, `ERROR`).
+- **terminalStatus**: estado de la terminal (`BUSY`, `IDLE`).
+
+### Estados de la transacción
+
+| Resultado | transactionStatus | terminalStatus | Qué significa y qué hacer |
+|:----------|:-----------------:|:--------------:|:--------------------------|
+| **Command_accepted** | PENDING | BUSY | La solicitud de cobro fue recibida por la terminal. La Librería inicia el bucle de Keep Alive. La Caja espera el retorno de vpiPurchaseMark(). |
+| **En proceso — autorizando** | PENDING | BUSY | Phast aún no respondió. La Librería continúa el Keep Alive. |
+| **En proceso — confirmando** | CONFIRMING | BUSY | Phast autorizó. La terminal está confirmando. La Librería continúa el Keep Alive. |
+| **APROBADO** | SUCCESS | IDLE | La Librería envía Query(transactionId) y retorna APROBADO a la Caja. |
+| **RECHAZADO/ERROR** | ERROR | IDLE | La transacción no pudo completarse. La Librería retorna el error a la Caja. |
+
+Mientras el `terminalStatus` sea **BUSY**, la terminal se encuentra procesando la transacción y la Caja no debe enviar nuevas operaciones. Cuando pasa a **IDLE**, la terminal queda disponible y la Librería retorna el resultado final.
 
 ## Posibles Retorno del Método
 Los posibles valores de retorno del método son los siguientes:
