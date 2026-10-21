@@ -13,7 +13,6 @@ Para ello facilitamos una librería de integración, y mediante las funcionalida
 - [Manejo de puertos](Funcionalidades/Puertos.md)
 - [Prueba de comunicación](Funcionalidades/ComTest.md)
 - [Venta](Funcionalidades/Venta.md).
-- [Venta + Extracción](Funcionalidades/Venta+Extracción.md).
 - [Venta con QR](Funcionalidades/VentaQR.md) + pago con transferencias.
 - [Anulación](Funcionalidades/Anulacion.md).
 - [Cierre de lote](Funcionalidades/cierreLote.md).
