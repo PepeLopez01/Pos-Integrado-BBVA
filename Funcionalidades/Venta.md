@@ -1,5 +1,7 @@
 # Venta
 
+## ESTE FUE ACTUALIZADO RESPECTO DEL ORIGINAL, REVISAR ANTES DE PUBLICAR. 
+
 La venta es la principal transacción a realizar con la terminal, existe la posibilidad de llevarla a cabo de dos formas:
 
 - Realizar la transacción con cualquier marca de tarjeta.
