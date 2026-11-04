@@ -13,7 +13,7 @@ Recibe una estructura como parametro, comParams_t:
 ````c
 typedef struct COM_PARAMS{
 	LPSTR com;          // Nombre del puerto. Ej: "COM1", "COM2", etc.
-	WORD  baudRate;     // Velocidad de transmición: 19200
+	WORD  baudRate;     // Velocidad de transmición: 9600
 	WORD byteSize;      // Largo del byte: 8
 	char  parity;       // Paridad: 'N'
 	WORD  stopBits;     // Bits de parada: 1
