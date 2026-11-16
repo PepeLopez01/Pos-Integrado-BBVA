@@ -20,11 +20,11 @@
 #define VPI_ERR_COM                 301 // El POS no pudo comunicarse con el host.
 #define VPI_ERR_PRINT               302 // El POS no pudo imprimir el ticket.
 #define VPI_TERMINAL_BUSY           303 // La terminal respondió correctamente, pero su estado no era IDLE
-#DEFINE VPI_POSSIBLE_CONFIRMED_TRX  444 // Se recibió transactionStatus = "CONFIRMING" y se perdió la comunicación de forma no                                                      recuperable. La operación pudo haberse confirmado.
-#define VPI_INVALID_IN_CMD      901 // Nombre del comando inexistente.
-#define VPI_INVALID_IN_PARAM    902 // Formato de algún parámetro de entrada no es correcto.
-#define VPI_INVALID_OUT_CMD     903 // El comando enviado por
-#define VPI_GENERAL_FAIL        909 // Error general en la operación.
+#DEFINE VPI_POSSIBLE_CONFIRMED_TRX  444 // Se recibió transactionStatus = "CONFIRMING" y se perdió la comunicación de forma no                                                   //   recuperable. La operación pudo haberse confirmado.
+#define VPI_INVALID_IN_CMD          901 // Nombre del comando inexistente.
+#define VPI_INVALID_IN_PARAM        902 // Formato de algún parámetro de entrada no es correcto.
+#define VPI_INVALID_OUT_CMD         903 // El comando enviado por
+#define VPI_GENERAL_FAIL            909 // Error general en la operación.
 
 ````
 
