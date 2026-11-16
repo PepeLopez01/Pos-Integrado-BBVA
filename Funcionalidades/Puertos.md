@@ -7,7 +7,7 @@ Existen dos métodos que nos van a ayudar a realizar el manejo de puertos.
 Este método permite abrir el puerto serial de comunicación para poder enviar las instrucciones al PoS.
 Para realizar la apertura el puerto usamos el método **vpiOpenPort**.
 ````c
-Int vpiOpenPort (comParams_t* params)
+WORD vpiOpenPort (comParams_t* params)
 ````
 Recibe una estructura como parametro, comParams_t:
 ````c
@@ -34,7 +34,7 @@ Para una ejecución exitosa el puerto debe estar cerrado y disponible.
 Este método realiza el cierre del puerto y lo deja libre para otras aplicaciones.
 Para cerrar el puerto empleamos el método **vpiClosePort**
 ````c
-Int vpiClosePort()
+WORD vpiClosePort()
 ````
 El puerto debe estar abierto para que la ejecución sea exitosa. Luego de ejecutar este comando, si se desea establecer nuevamente la comunicación con el PoS, se debe realizar la apertura del puerto.
 ## Posibles Retorno para ambos métodos
