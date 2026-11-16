@@ -9,7 +9,7 @@ En cada ciclo, el Keep Alive mantiene activa la conexión con la terminal y obti
 transactionStatus: estado de la transacción en curso (PENDING, CONFIRMING, SUCCESS, ERROR).
 terminalStatus: estado de la terminal (BUSY, IDLE).
 
-Las operaciones de transacción (PURCHASE, VOID, REFUND, REFUND_VOID) responden inicialmente con Command_accepted, y su resultado definitivo se obtiene a través del Keep Alive y de Query(transactionId).
+Las operaciones de transacción (PURCHASE, VOID, REFUND) responden inicialmente con Command_accepted, y su resultado definitivo se obtiene a través del Keep Alive y de Query(transactionId).
 
 #### Otros enlaces
 - [Principal](../README.md).
