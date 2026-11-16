@@ -1,7 +1,5 @@
 # Venta
 
-## ESTE FUE ACTUALIZADO RESPECTO DEL ORIGINAL, REVISAR ANTES DE PUBLICAR. 
-
 La venta es la principal transacción a realizar con la terminal, existe la posibilidad de llevarla a cabo de dos formas:
 
 - Realizar la transacción con cualquier marca de tarjeta.
@@ -10,7 +8,7 @@ La venta es la principal transacción a realizar con la terminal, existe la posi
 En ambas formas se utiliza el método **vpiPurchaseMark** de la librería de integración.
 
 ````c 
-int vpiPurchaseMark(vpiPurchaseIn_t* input, vpiTrxMarkOut1_t* output, LONG timeout)
+void vpiPurchaseMark(vpiPurchaseIn_t* input, vpiTrxMarkOut1_t* output, LONG timeout)
 ````
 
 Este método cuenta con dos estructuras como parámetros:
