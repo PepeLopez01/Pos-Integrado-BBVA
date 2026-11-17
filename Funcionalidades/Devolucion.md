@@ -4,7 +4,7 @@ La devolución es una operación que permite revertir una venta que no se encuen
 La devolución se realiza con el método **vpiRefund** de la librería de integración.
 
 ````c
-Int vpiRefund(vpiRefundIn_t* input, vpiTrxOut_t* output, LONG timeout)
+WORD vpiRefund(vpiRefundIn_t* input, vpiTrxOut_t* output, LONG timeout)
 ````
 Este método cuenta con dos estructuras como parámetros:
 
