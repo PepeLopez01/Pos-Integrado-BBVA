@@ -8,7 +8,7 @@ Como aclaración al cerrar un lote, se abre automáticamente un nuevo lote donde
 El mismo se realiza con el método **vpiBatchClose** de la librería de integración.
 
 ````c
-Int vpiBatchClose(vpiBatchCloseOut_t* output, LONG timeout)
+WORD vpiBatchClose(vpiBatchCloseOut_t* output, LONG timeout)
 ````
 
 Recibiendo como parámetro la estructura de salida, vpiBatchCloseOut_t:
