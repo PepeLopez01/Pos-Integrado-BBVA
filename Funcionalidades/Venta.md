@@ -8,7 +8,7 @@ La venta es la principal transacción a realizar con la terminal, existe la posi
 En ambas formas se utiliza el método **vpiPurchaseMark** de la librería de integración.
 
 ````c 
-void vpiPurchaseMark(vpiPurchaseIn_t* input, vpiTrxMarkOut1_t* output, LONG timeout)
+WORD vpiPurchaseMark(vpiPurchaseIn_t* input, vpiTrxMarkOut1_t* output, LONG timeout)
 ````
 
 Este método cuenta con dos estructuras como parámetros:
