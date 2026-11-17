@@ -3,7 +3,7 @@ Esta consulta permite obtener las marcas de tarjeta con que sería posible opera
 
 Se realiza con el método **vpiGetIssuer** de la librería de integración.
 ````c
-Int vpiGetIssuer(WORD index, vpiIssuerOut_t* output)
+WORD vpiGetIssuer(WORD index, vpiIssuerOut_t* output)
 ````
 
 Este método recibe como parámetros el indice a consultar:
