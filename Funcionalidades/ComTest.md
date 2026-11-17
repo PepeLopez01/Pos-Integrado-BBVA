@@ -11,6 +11,34 @@ terminalStatus: estado de la terminal (BUSY, IDLE).
 
 Las operaciones de transacción (PURCHASE, VOID, REFUND) responden inicialmente con Command_accepted, y su resultado definitivo se obtiene a través del Keep Alive y de Query(transactionId).
 
+Existen dos métodos que se pueden implementar para chequear la comunicación.
+
+Para verificar que la comunicación entre la terminal y la caja este establecida de manera correcta, se puede utilizar el método vpiTestConnection de la librería de integración.
+
+Int vpiTestConnection()
+Por otro lado, con el método vpiGetVersion podemos identificar que tipo de PoS está conectada a la caja.
+
+Int vpiGetVersion(vpiVersionOut_t* output)
+Este recibe una estructura de salida, vpiVersionOut_t:
+
+typedef struct GETVERSION_OUT {
+	WORD version;  // Mensaje de respuesta de version 
+} vpiVersionOut_t;
+Para indentificar el PoS, lo hacemos dependiendo del parametro version de la estrutura de retorno.
+
+    Version         -----  version 
+    Legacy          -----       1
+    Interprete      -----       2
+Posibles Retorno del Método
+Los posibles valores de retorno para ambos métodos son los siguientes:
+
+VPI_OK
+VPI_FAIL 
+VPI_TIMEOUT_EXP
+En la sección códigos de respuesta de la librería de integración se pueden ver la tabla de valores para estas respuestas
+
+
+
 #### Otros enlaces
 - [Principal](../README.md).
 - [Manejo de puertos](./Puertos.md)
