@@ -3,7 +3,7 @@ Esta consulta permite obtener los planes por marcas de tarjeta con que sería po
 
 Se realiza con el método **vpiGetPlan** de la librería de integración.
 ````c
-Int vpiGetPlan(WORD index, vpiPlanOut_t* output)
+WORD vpiGetPlan(WORD index, vpiPlanOut_t* output)
 ````
 
 Este método recibe como parámetros el indice a consultar:
