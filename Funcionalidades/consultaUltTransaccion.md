@@ -4,7 +4,7 @@ Esta consulta permite obtener la última transacción **aprobada** en el PoS.
 Se realiza con el método **vpiGetLastTrxData** de la librería de integración.
 
 ````c
-Int vpiGetLastTrxData(WORD* trxCode, vpiTrxOut_t* output)
+WORD vpiGetLastTrxData(WORD* trxCode, vpiTrxOut_t* output)
 ````
 Este método recibe dos parámetros de retorno.
 
