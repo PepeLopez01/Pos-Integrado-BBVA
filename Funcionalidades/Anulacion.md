@@ -4,7 +4,7 @@ La anulación es la acción de reversar una venta, por ello, solo se realiza si 
 La anulación se realiza con el método **vpiVoid** de la librería de integración.
 
 ````c
-Int vpiVoid(vpiVoidIn_t* input, vpiTrxOut_t* output, LONG timeout)
+WORD vpiVoid(vpiVoidIn_t* input, vpiTrxOut_t* output, LONG timeout)
 ````
 Este método cuenta con dos estructuras como parámetros:
 
