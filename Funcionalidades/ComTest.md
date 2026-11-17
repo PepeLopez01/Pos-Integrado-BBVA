@@ -29,13 +29,14 @@ Para indentificar el PoS, lo hacemos dependiendo del parametro version de la est
     Version         -----  version 
     Legacy          -----       1
     Interprete      -----       2
-Posibles Retorno del Método
+## Posibles Retorno del Método
 Los posibles valores de retorno para ambos métodos son los siguientes:
 
 VPI_OK
 VPI_FAIL 
 VPI_TIMEOUT_EXP
-En la sección códigos de respuesta de la librería de integración se pueden ver la tabla de valores para estas respuestas
+
+En la sección [códigos de respuesta](../Libreria/codigosRespuesta.md) de la librería de integración se pueden ver la tabla de valores para estas respuestas
 
 
 
