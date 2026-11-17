@@ -4,7 +4,7 @@ Esta funcionalidad permite a la terminal realizar ventas con QR, que al ser esca
 
 Para ello lo realizamos por medio del método **vpiGetQRZ** de la librería de integración.
 
-`Int vpiGetQRZ(vpiQrzIn_t* input, vpiQrzOut_t* output, LONG timeout)`
+`WORD vpiGetQRZ(vpiQrzIn_t* input, vpiQrzOut_t* output, LONG timeout)`
 
 Este método recibe como parametros dos estructuras:
 
