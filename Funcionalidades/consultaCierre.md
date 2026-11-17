@@ -4,7 +4,7 @@ Esta funcionalidad permite conocer la totalización, por marca y tipo de transac
 Esta consulta se realiza con el método **vpiGetBatchCloseData** de la librería de integración.
 
 ````c
-Int vpiGetBatchCloseData(WORD index, vpiBatchCloseDataOut_t * output)
+WORD vpiGetBatchCloseData(WORD index, vpiBatchCloseDataOut_t * output)
 ````
 
 Este método recibe como parámetros el indice a consultar:
