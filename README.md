@@ -22,14 +22,6 @@ Para ello facilitamos una librería de integración, y mediante las funcionalida
 - [Consulta de tarjetas](Funcionalidades/consultaTarjetas.md) disponibles para operar.
 - [Consulta de planes](Funcionalidades/consultaPlanes.md) a aplicar por tarjeta.
 
-
-### Herramientas y Aplicaciones
-- [Libreria de integración](./Aplicaciones/Libreria/).
-- [TestVpi](./Aplicaciones/testVpi/).
-- [Billetera Integra](./Aplicaciones/Billetera/) (Billetera de pruebas QR estático).
-- [Demo de integración](./Aplicaciones/DemoIntegraciónVpiPc/).
-- [Drivers](./Aplicaciones/Drivers/)
-
 ### Diferencias
 - No admite multicomercio.
 - No permite Pre Autorizaciones.
