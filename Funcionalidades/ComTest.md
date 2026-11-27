@@ -37,7 +37,6 @@ En la sección [códigos de respuesta](../Libreria/codigosRespuesta.md) de la li
 - [Manejo de puertos](./Puertos.md)
 - [Prueba de comunicación](./ComTest.md)
 - [Venta](./Venta.md).
-- [Venta + Extracción](./Venta+Extracción.md).
 - [Venta con QR](./VentaQR.md) + pago con transferencias.
 - [Anulacion](./Anulacion.md)
 - [Cierre de lote](./cierreLote.md).
